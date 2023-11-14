@@ -1,0 +1,251 @@
+@import "variables";
+@import "fonts";
+@import "mixin";
+@import "global";
+
+/* header */
+
+header{
+    @include flex(row);
+    justify-content: start;
+    height: 14%;
+    width: 100%;
+    background-color: transparent;
+    position: absolute;
+
+    .infoImg{
+        display: none;
+        width: 10%;
+        position: absolute;
+        bottom: -30%;
+        right: 75%;
+        transform: translateX(-50%);
+        background: linear-gradient(135deg, rgba(146, 146, 146, 0.1), rgba(34, 34, 34, 0));
+        backdrop-filter: blur(10px);
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .activeInfo:hover + .infoImg{
+        display: flex;
+    }
+
+    img{
+        height: auto;
+        width: 5%;
+        border-radius: 100%;
+        margin-left: 5%;
+        border: 1px solid $cor-princ;
+        transition: 0.01s;
+
+        &:hover{
+            border: 1px solid #48B4B4;
+            transition: 0.01s;
+        }
+
+    }
+
+    h1{
+        font-weight: 600;
+        color: $cor-fundo;
+        font-size: 3vh;
+        margin-left: 1%
+    }
+
+}
+/* header */
+
+/* main */
+
+main {
+    @include flex(column);
+    background-color: $cor-princ;
+    height: 100%;
+    width: 100%;
+
+    .divBtn{
+        @include flex (row);
+        width: 100%;
+        height: 5%;
+    }
+
+    h1{
+        color: $cor-fundo;
+        font-size: 7vh;
+        width: 35%;
+        text-align: center;
+        margin-bottom: 0.5%
+    }
+
+    p{
+        font-weight: 500;
+        font-size: 4vh;
+        width: 40%;
+        color: $cor-second;
+        text-align: center;
+        margin-bottom: 1.5%
+    }
+
+    a{
+        @include flex(column);
+        background-color: $cor-fundo;
+        border-radius: 2rem;
+        width: 8%;
+        padding: 8px;
+        font-weight: 600;
+        margin: 0.5%;
+
+        &:hover{
+            background-color: rgb(219, 219, 219);
+            filter: drop-shadow(2px 2px 2px $cor-texto);
+        }
+
+    }
+
+}
+/* main */
+
+/* faq */
+
+.faqPage{
+    @include flex(column);
+    min-height: 100%;
+    width: 100%;
+
+    h1{
+        color: $cor-princ;
+        margin-bottom: 1%;
+        width: 80%;
+        text-align: start;
+    }
+
+    details{
+        @include flex(column);
+        background-color: $cor-princ;
+        border-radius: 8px;
+        padding: 10px;
+        width: 80%;
+        margin: 0.7%;
+        user-select: none;
+
+        summary{
+            color: $cor-fundo;
+            font-size: 3vh;
+        }
+
+        p{
+            color:$cor-fundo ;
+            padding: 5px;
+            user-select: text;
+        }
+        
+    }
+
+}
+
+/* faq */
+
+/* invite */
+
+.invitePage{
+    @include flex(column);
+    background-color: $cor-princ;
+    height: 100%;
+    width: 100%;
+
+    h1{
+        color: $cor-fundo;
+        font-size: 6vh;
+        width: 50%;
+        text-align: center;
+        margin-bottom: 0.5%
+    }
+
+    p{
+        font-weight: 500;
+        font-size: 3vh;
+        width: 45%;
+        color: $cor-second;
+        text-align: center;
+        margin-bottom: 1.5%
+    }
+
+    a{
+        @include flex(column);
+        background-color: $cor-fundo;
+        border-radius: 2rem;
+        width: 10%;
+        padding: 8px;
+        font-weight: 600;
+
+        &:hover{
+            background-color: rgb(219, 219, 219);
+            filter: drop-shadow(2px 2px 2px $cor-texto);
+        }
+    }
+
+}
+
+/* invite */
+
+/* responsive */
+
+@media screen and (max-width: 767px){
+    header{
+        img{
+            height: auto;
+            width: 15%;
+        }
+
+        h1{
+            margin-left: 2%;
+        }
+
+    }
+    main{
+        h1{
+            font-size: 5vh;
+            width: 90%;
+        }
+
+        p{
+            font-size: 3vh;
+            width: 90%;
+            margin-bottom: 4%;
+        }
+
+        a{
+            width: 30%;
+            margin: 2%;
+        }
+
+    }
+
+    .faqPage{
+        h1{
+            margin-bottom: 5%;
+        }
+    }
+
+    .invitePage{
+        h1{
+            font-size: 5vh;
+            width: 90%;
+            margin-bottom: 2%;
+        }
+
+        p{
+            font-size: 2.5vh;
+            width: 97%;
+            text-align: center;
+            margin-bottom: 5%;
+        }
+
+        a{
+            width: 30%;
+        }
+
+    }
+
+}
